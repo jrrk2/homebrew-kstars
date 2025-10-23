@@ -1,0 +1,67 @@
+name: Test and Build
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  schedule:
+    - cron: '0 0 * * 0' # Run weekly
+
+jobs:
+  test-formulas:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Homebrew
+        run: |
+          brew update
+          
+      - name: Tap repository
+        run: |
+          mkdir -p "$(brew --repo)/Library/Taps/yourusername"
+          ln -s "$PWD" "$(brew --repo)/Library/Taps/yourusername/homebrew-kstars"
+          
+      - name: Test INDI formula
+        run: brew audit --strict yourusername/kstars/indi-lib
+        
+      - name: Test KStars formula
+        run: brew audit --strict yourusername/kstars/kstars
+        
+  build-bottles:
+    needs: test-formulas
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        formula: [indi-lib, kstars]
+        
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Homebrew
+        run: |
+          brew update
+          
+      - name: Tap repository
+        run: |
+          mkdir -p "$(brew --repo)/Library/Taps/yourusername"
+          ln -s "$PWD" "$(brew --repo)/Library/Taps/yourusername/homebrew-kstars"
+          
+      - name: Install dependencies
+        run: |
+          brew install --only-dependencies yourusername/kstars/${{ matrix.formula }}
+          
+      - name: Build bottle
+        run: |
+          brew install --build-bottle yourusername/kstars/${{ matrix.formula }}
+          brew bottle yourusername/kstars/${{ matrix.formula }}
+          
+      - name: Upload bottle
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.formula }}-bottle
+          path: ./${{ matrix.formula }}*.bottle.tar.gz
+          retention-days: 7
