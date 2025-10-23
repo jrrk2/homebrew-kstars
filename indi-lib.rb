@@ -7,7 +7,7 @@ class IndiLib < Formula
   head "https://github.com/indilib/indi.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/yourusername/homebrew-kstars/releases/download/indi-lib-2.0.6"
+    root_url "https://github.com/jrrk2/homebrew-kstars/releases/download/indi-lib-2.0.6"
     sha256 arm64_monterey: "c70dcbdfcd143bb91bca07d9d4a00d5d5b12952bfa4c5b3d4b302da8ec01ec4f"
     sha256 monterey: "53aec7b795de48c6e58f9a4d7fa3f9e3b968cc5e342b50f023ebd8aaf9793805"
   end

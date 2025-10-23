@@ -38,7 +38,7 @@ cask "kstars-full" do
       If you need to install additional INDI drivers or customize your installation,
       please visit our Homebrew tap repository:
       
-      https://github.com/yourusername/homebrew-kstars
+      https://github.com/jrrk2/homebrew-kstars
     EOS
   end
 end

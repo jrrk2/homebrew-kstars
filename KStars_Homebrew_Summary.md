@@ -33,19 +33,19 @@ Run the installation script which will:
 3. Install KStars
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/yourusername/homebrew-kstars/master/scripts/install_kstars.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/jrrk2/homebrew-kstars/master/scripts/install_kstars.sh)"
 ```
 
 ### Option 2: Manual Installation
 
 1. Tap your repository:
    ```bash
-   brew tap yourusername/kstars https://github.com/yourusername/homebrew-kstars
+   brew tap jrrk2/kstars https://github.com/jrrk2/homebrew-kstars
    ```
 
 2. Install KStars:
    ```bash
-   brew install yourusername/kstars/kstars
+   brew install jrrk2/kstars/kstars
    ```
 
 ### Option 3: Building from Source
@@ -54,7 +54,7 @@ For more advanced users who want to build from source:
 
 1. Install the build script:
    ```bash
-   curl -o build_kstars.sh https://raw.githubusercontent.com/yourusername/homebrew-kstars/master/scripts/build_kstars.sh
+   curl -o build_kstars.sh https://raw.githubusercontent.com/jrrk2/homebrew-kstars/master/scripts/build_kstars.sh
    chmod +x build_kstars.sh
    ```
 
@@ -75,7 +75,7 @@ To make this solution available to others:
 
 1. Create a GitHub repository named `homebrew-kstars`
 2. Upload all the files in the output directory to this repository
-3. Update all instances of `yourusername` in the code to your actual GitHub username
+3. Update all instances of `jrrk2` in the code to your actual GitHub username
 4. Add appropriate SHA256 checksums to the cask file once you've built the DMG files
 
 ## Customization

@@ -13,7 +13,7 @@ This repository contains Homebrew formulas for installing [KStars](https://edu.k
 The easiest way to install KStars is to run:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/yourusername/homebrew-kstars/master/scripts/install_kstars.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/jrrk2/homebrew-kstars/master/scripts/install_kstars.sh)"
 ```
 
 ### Manual Installation
@@ -22,12 +22,12 @@ If you prefer to install manually:
 
 1. Tap this repository:
    ```bash
-   brew tap yourusername/kstars
+   brew tap jrrk2/kstars
    ```
 
 2. Install KStars:
    ```bash
-   brew install yourusername/kstars/kstars
+   brew install jrrk2/kstars/kstars
    ```
 
 ## Requirements
@@ -48,7 +48,7 @@ If you prefer to install manually:
 If you want to create a redistributable DMG file:
 
 ```bash
-CREATE_DMG=1 brew reinstall yourusername/kstars/kstars
+CREATE_DMG=1 brew reinstall jrrk2/kstars/kstars
 ```
 
 The DMG will be created on your Desktop.
@@ -59,7 +59,7 @@ The DMG will be created on your Desktop.
 
 - **KStars crashes on startup**: Make sure all dependencies are properly installed. Try running:
   ```bash
-  brew reinstall yourusername/kstars/kstars
+  brew reinstall jrrk2/kstars/kstars
   ```
 
 - **INDI drivers not found**: KStars should automatically find the INDI drivers. If not, you can manually set the path in KStars settings to:
@@ -74,7 +74,7 @@ The DMG will be created on your Desktop.
 
 ### Getting Help
 
-If you encounter any issues not covered here, please [file an issue](https://github.com/yourusername/homebrew-kstars/issues).
+If you encounter any issues not covered here, please [file an issue](https://github.com/jrrk2/homebrew-kstars/issues).
 
 ## Credits
 

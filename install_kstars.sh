@@ -50,7 +50,7 @@ success "Directories created"
 
 # Tap the custom KStars repository
 status "Tapping custom KStars repository..."
-brew tap yourusername/kstars https://github.com/yourusername/homebrew-kstars
+brew tap jrrk2/kstars https://github.com/jrrk2/homebrew-kstars
 success "Tap added"
 
 # Install QT (with options)
@@ -83,7 +83,7 @@ success "INDI libraries installed"
 
 # Install KStars
 status "Installing KStars..."
-brew install yourusername/kstars/kstars
+brew install jrrk2/kstars/kstars
 success "KStars installed"
 
 echo
@@ -93,4 +93,4 @@ echo -e "${GREEN}=============================================${NC}"
 echo
 echo "You can now launch KStars from your Applications folder."
 echo "If you encounter any issues, please report them at:"
-echo "https://github.com/yourusername/homebrew-kstars/issues"
+echo "https://github.com/jrrk2/homebrew-kstars/issues"

@@ -21,14 +21,14 @@ jobs:
           
       - name: Tap repository
         run: |
-          mkdir -p "$(brew --repo)/Library/Taps/yourusername"
-          ln -s "$PWD" "$(brew --repo)/Library/Taps/yourusername/homebrew-kstars"
+          mkdir -p "$(brew --repo)/Library/Taps/jrrk2"
+          ln -s "$PWD" "$(brew --repo)/Library/Taps/jrrk2/homebrew-kstars"
           
       - name: Test INDI formula
-        run: brew audit --strict yourusername/kstars/indi-lib
+        run: brew audit --strict jrrk2/kstars/indi-lib
         
       - name: Test KStars formula
-        run: brew audit --strict yourusername/kstars/kstars
+        run: brew audit --strict jrrk2/kstars/kstars
         
   build-bottles:
     needs: test-formulas
@@ -47,17 +47,17 @@ jobs:
           
       - name: Tap repository
         run: |
-          mkdir -p "$(brew --repo)/Library/Taps/yourusername"
-          ln -s "$PWD" "$(brew --repo)/Library/Taps/yourusername/homebrew-kstars"
+          mkdir -p "$(brew --repo)/Library/Taps/jrrk2"
+          ln -s "$PWD" "$(brew --repo)/Library/Taps/jrrk2/homebrew-kstars"
           
       - name: Install dependencies
         run: |
-          brew install --only-dependencies yourusername/kstars/${{ matrix.formula }}
+          brew install --only-dependencies jrrk2/kstars/${{ matrix.formula }}
           
       - name: Build bottle
         run: |
-          brew install --build-bottle yourusername/kstars/${{ matrix.formula }}
-          brew bottle yourusername/kstars/${{ matrix.formula }}
+          brew install --build-bottle jrrk2/kstars/${{ matrix.formula }}
+          brew bottle jrrk2/kstars/${{ matrix.formula }}
           
       - name: Upload bottle
         uses: actions/upload-artifact@v4

@@ -289,4 +289,4 @@ fi
 
 echo
 echo "If you encounter any issues, please report them at:"
-echo "https://github.com/yourusername/homebrew-kstars/issues"
+echo "https://github.com/jrrk2/homebrew-kstars/issues"

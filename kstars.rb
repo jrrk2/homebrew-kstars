@@ -27,7 +27,7 @@ class Kstars < Formula
   depends_on "libraw"
   depends_on "qtkeychain"
   depends_on "qt"
-  depends_on "yourusername/kstars/indi-lib"
+  depends_on "jrrk2/kstars/indi-lib"
   depends_on "wcslib"
   depends_on "xplanet" => :optional
 
@@ -55,7 +55,7 @@ class Kstars < Formula
     cp_r "#{Formula["KDE-mac/kde/kf5-breeze-icons"].opt_share}/icons/breeze-dark/breeze-icons-dark.rcc", "#{bin}/KStars.app/Contents/Resources/icons/"
     
     # Copy INDI executables
-    cp Dir.glob("#{Formula["yourusername/kstars/indi-lib"].opt_bin}/indi*"), "#{bin}/KStars.app/Contents/MacOS/indi/"
+    cp Dir.glob("#{Formula["jrrk2/kstars/indi-lib"].opt_bin}/indi*"), "#{bin}/KStars.app/Contents/MacOS/indi/"
     
     # Update bundle Info.plist
     system "/usr/libexec/PlistBuddy", "-c", "Set :CFBundleShortVersionString #{version}",
